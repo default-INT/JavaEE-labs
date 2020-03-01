@@ -4,8 +4,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Arrays;
-
 /**
  * @version 1.1
  * @author Evgeniy Trofimov
@@ -21,7 +19,7 @@ public class HibernateUtil {
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (Throwable ex) {
             logger.error(ex.getMessage());
-            Arrays.stream(ex.getStackTrace()).forEach(logger::error);
+            logger.trace(ex.getStackTrace(), ex);
             throw new ExceptionInInitializerError();
         }
     }

@@ -3,6 +3,7 @@ package by.gstu.models.entities;
 import by.gstu.models.dao.DAOFactory;
 import by.gstu.models.entities.car.Car;
 import by.gstu.models.utils.ParserJSON;
+import org.hibernate.annotations.NamedQuery;
 import org.json.JSONObject;
 
 import javax.persistence.*;
